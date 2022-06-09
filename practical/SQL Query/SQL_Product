@@ -1,1 +1,73 @@
 
+mysql> use java;
+Database changed
+mysql> create table employee(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2
+mysql> create table product(
+    -> Id int primary key,
+    -> name_of product
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'product
+)' at line 3
+mysql> create table product(
+    -> Id int primary key,
+    -> Name_of_Product varchar(20),
+    -> cost_of_Product int,
+    -> Quantity_of_Product
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+mysql> create table product(
+    -> Id int primary key,
+    -> name_of product varchar(20),
+    -> cost_of_Product int,
+    -> Quantity_of_Product int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'product varchar(20),
+cost_of_Product int,
+Quantity_of_Product int)' at line 3
+mysql> create table product(
+    -> Id int primary key,
+    -> name_of_product varchar(20),
+    -> cost_of_Product int,
+    -> Quantity_of_Product int);
+Query OK, 0 rows affected (0.53 sec)
+
+mysql> desc product;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| Id                  | int(11)     | NO   | PRI | NULL    |       |
+| name_of_product     | varchar(20) | YES  |     | NULL    |       |
+| cost_of_Product     | int(11)     | YES  |     | NULL    |       |
+| Quantity_of_Product | int(11)     | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.10 sec)
+
+mysql> insert into product values(1, 'Bourbon', 10, 2);
+Query OK, 1 row affected (0.25 sec)
+
+mysql> insert into product values(2, 'Kurkure', 10, 4);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into product values(3, 'Lolipop', 10, 5);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into product values(4, 'Chocolate', 10, 3);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from product;
++----+-----------------+-----------------+---------------------+
+| Id | name_of_product | cost_of_Product | Quantity_of_Product |
++----+-----------------+-----------------+---------------------+
+|  1 | Bourbon         |              10 |                   2 |
+|  2 | Kurkure         |              10 |                   4 |
+|  3 | Lolipop         |              10 |                   5 |
+|  4 | Chocolate       |              10 |                   3 |
++----+-----------------+-----------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select count(*) from product;
++----------+
+| count(*) |
++----------+
+|        4 |
